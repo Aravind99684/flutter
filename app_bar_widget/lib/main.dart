@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // app bar with multiple icons.
 void main(List<String> args) {
-  
+  runApp(AppBarWidget());
 }
 
 class AppBarWidget extends StatelessWidget {
