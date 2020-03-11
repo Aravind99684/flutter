@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-void main(List<String> args) {}
+void main(List<String> args) {
+
+  runApp(ContainerWidget());
+}
 
 class ContainerWidget extends StatelessWidget {
   @override
@@ -20,13 +23,15 @@ class ContainerWidget extends StatelessWidget {
             ),
         ],
       ),
-      Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        margin: EdgeInsets.all(25.0),
-        decoration: FlutterLogoDecoration(), // uses the flutter logo as the decoration of the body
-
-      )
+      body: Center(
+        child: Container(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          margin: EdgeInsets.all(25.0),
+          decoration: FlutterLogoDecoration(),
+        )
+      ),
+     
     );
   }
 }
