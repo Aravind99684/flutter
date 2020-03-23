@@ -13,16 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: Center(
-        child: Text(
-          'Demo Map Testing',
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 40.0,
-          ),
-        ),
-      ),
+     
     );
   }
 }
@@ -35,19 +26,39 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(16),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children:<Widget>[
-            Text(
-              'Using Google Maps in Flutter',
-              style: TextStyle(fontSize: 42.0),
-            ),
-          ]
-        )
-      )
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Demo Map"),
+      ),
+      body: Container(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Using Google Maps in Flutter',
+                style: TextStyle(fontSize: 42.0),
+              ),
+              SizedBox(height: 20),
+              Text(
+                'The google_maps_flutter package is still in the Developers Preview status, so make sure you monitor changes closely when using it.',
+                style: TextStyle(fontSize: 20.0),
+              ),
+            ],
+          ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Increment',
+        child: Icon(Icons.map),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => GMap()),
+          );
+        }
+      ),
     );
+      
   }
 }
